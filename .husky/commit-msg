@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+message="$(cat $1)"
+taskCodePattern="^\[([A-Z]+)\]"
+typePattern="feature|fixbug|refactor|build|chore|update|upgrade|change"
+descriptionPattern=": [A-Z].*"
+
+
+if [[ $message =~ $taskCodePattern ]]; then
+    taskCode=${BASH_REMATCH[1]}
+    if [[ $message =~ $typePattern ]]; then
+        type=${BASH_REMATCH[0]}
+        if [[ $message =~ $descriptionPattern ]]; then
+        description=${BASH_REMATCH[0]:2}
+        description=$(echo "$description" | sed '/^#/d')
+        echo ""
+        echo "Task code  : $taskCode"
+        echo "Type       : $type"
+        echo "Description: $description"
+        echo ""
+        exit 0
+        else
+            echo ""
+            echo "ERR: task_description is not valid"
+            echo ""
+            echo "Please try again with format:"
+            echo ""
+            echo "          [XDATA] task_type: task_description."
+            echo ""
+            echo "    task_type        : [feature|fixbug|refactor|build|chore|update|upgrade|change]."
+            echo "    task_description : Please describe the task as clearly as possible, and start with capital letter."
+            echo "    Example : [XDATA] feature: Add new feature."
+            echo ""
+            exit 1
+        fi
+    else
+        echo ""
+        echo "ERR: task_type is not valid"
+        echo ""
+        echo "Please try again with format:"
+        echo ""
+        echo "          [XDATA] task_type: task_description."
+        echo ""
+        echo "    task_type        : [feature|fixbug|refactor|build|chore|update|upgrade|change]."
+        echo "    task_description : Please describe the task as clearly as possible, and start with capital letter."
+        echo "    Example : [XDATA] feature: Add new feature."
+        echo ""
+        exit 1
+    fi
+else
+    echo ""
+    echo "ERR: task_code is not valid"
+    echo ""
+    echo "Please try again with format:"
+    echo ""
+    echo "          [XDATA] task_type: task_description."
+    echo ""
+    echo "    task_type        : [feature|fixbug|refactor|build|chore|update|upgrade|change]."
+    echo "    task_description : Please describe the task as clearly as possible, and start with capital letter."
+    echo "    Example : [XDATA] feature: Add new feature."
+    echo ""
+    exit 1
+fi

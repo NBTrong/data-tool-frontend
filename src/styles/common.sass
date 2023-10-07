@@ -1,0 +1,378 @@
+// common styles
+body
+    min-width: 375px
+    background: $n2
+    +inter
+    +base1-s
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    letter-spacing: -.01em
+    color: $n7
+    +dark-body
+        background: $n8
+        color: $n1
+
+a
+    text-decoration: none
+
+svg,
+img
+    vertical-align: middle
+
+button
+    background: none
+
+button,
+input,
+textarea
+    +inter
+
+.desktop
+    &-hide
+        +d
+            display: none !important
+    &-show
+        display: none !important
+        +d
+            display: block !important
+    &-text-right
+        +d
+            text-align: right
+
+.tablet
+    &-hide
+        +t
+            display: none !important
+    &-show
+        display: none !important
+        +t
+            display: block !important
+
+.mobile
+    &-hide
+        +m
+            display: none !important
+    &-show
+        display: none !important
+        +m
+            display: block !important
+
+.recharts-rectangle.recharts-tooltip-cursor
+    +dark-common
+        fill: $n6
+
+.recharts-curve.recharts-tooltip-cursor
+    +dark-common
+        stroke: $n5
+
+.recharts-sector
+    +dark-common
+        stroke: $n7
+
+::-webkit-scrollbar-track
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3)
+    background-color: #FFFFFF
+::-webkit-scrollbar
+    width: 4px
+    background-color: #FFFFFF
+::-webkit-scrollbar-thumb
+    background-color: #CCCCCC
+.limit-1-line
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box !important
+    -webkit-line-clamp: 1
+    line-clamp: 1
+    -webkit-box-orient: vertical
+    transition: all 0.3s ease-in-out
+
+.limit-2-line
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box !important
+    -webkit-line-clamp: 2
+    line-clamp: 2
+    -webkit-box-orient: vertical
+
+.limit-3-line
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box !important
+    -webkit-line-clamp: 3
+    line-clamp: 3
+    -webkit-box-orient: vertical
+
+.limit-4-line
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box !important
+    -webkit-line-clamp: 4
+    line-clamp: 4
+    -webkit-box-orient: vertical
+.limit-5-line
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box !important
+    -webkit-line-clamp: 5
+    line-clamp: 5
+    -webkit-box-orient: vertical
+
+.min-h-screen
+    min-height: 80vh
+
+$breakpoint: 700px
+.fs-mobile
+    @media (max-width: $breakpoint)
+        font-size: 12px !important
+
+.cursor-pointer
+    cursor: pointer
+
+.word-wrap
+    word-wrap: break-word
+
+.word-break
+    word-break: break-all
+
+.logo
+    width: 15px
+    height: 15px
+    border-radius: 100%
+
+.logo-sm
+    width: 20px
+    height: 20px
+    border-radius: 100%
+
+.logo-md
+    width: 30px
+    height: 30px
+    border-radius: 100%
+
+.bg-gray
+    background-color: #f4f4f4 !important
+
+$twinkle-opacity-start: 0.4
+$twinkle-opacity-end: 0.8
+
+@keyframes twinkly
+    from
+        opacity: $twinkle-opacity-start
+    to
+        opacity: $twinkle-opacity-end
+
+.twinkle
+    background: #cbcbcb
+    border-radius: 5px
+    *
+        pointer-events: none
+        animation: twinkly 1s alternate infinite
+
+.rounded-20
+    border-radius: 20px !important
+
+.text-gray
+    color: #6f767e
+    &svg
+        fill: #6f767e !important
+.shadow-0
+    box-shadow: none !important
+
+input.disabled
+    pointer-events: none
+    cursor: none!important
+    opacity: 0.75
+
+.min-width-150
+    min-width: 150px
+
+.min-width-200
+    min-width: 200px
+
+.min-width-230
+    min-width: 230px
+
+.min-width-250
+    min-width: 230px
+
+.min-width-300
+    min-width: 300px
+
+.col-mobile-100
+    @media (max-width: 700px)
+        width: 100%
+.min-width-unset
+    min-width: unset !important
+
+.text-hover-danger
+    &:hover
+        color: #b93b3b !important
+
+.react-datepicker__aria-live
+    display: none !important
+hr
+    border-top: 1px solid #8c8b8b
+    border-bottom: 1px solid #fff
+
+.counters
+    display: flex
+
+.counter
+    position: relative
+    display: flex
+    overflow: hidden
+    align-items: center
+    height: 3.125rem
+    font-size: 3.125rem
+    color: #333
+    margin: 0 1.25rem 0.625rem
+
+    > span
+        z-index: 1
+        display: flex
+        flex-direction: column
+        height: 100%
+        transition: transform 2s ease
+        transform: translateY(0)
+        line-height: 1
+
+        span
+            flex: 0 0 100%
+            height: 100%
+
+h3.text
+    position: relative
+    display: flex
+    overflow: hidden
+    align-items: center
+    height: 3.125rem
+    font-size: 3.125rem
+    color: #333
+    margin: 1rem 0rem 0.625rem
+
+.border-app
+    border: 2px solid #EFEFEF
+
+.hover-fw-bold
+    &:hover
+        font-weight: bold
+
+.hover-underline
+    &:hover
+        text-decoration: underline
+.pointer-event-none-all
+    *
+        pointer-events: none
+
+.custom-hover
+    .hover-show
+        -webkit-transition: all ease-in-out .2s
+        -o-transition: all ease-in-out .2s
+        transition: all ease-in-out .2s
+        opacity: 0
+    .hover-hide
+        -webkit-transition: all ease-in-out .2s
+        -o-transition: all ease-in-out .2s
+        transition: all ease-in-out .2s
+        opacity: 1
+    &:hover
+        .hover-show
+            opacity: 1
+        .hover-hide
+            opacity: 0
+
+.fs-7
+    font-size: 13px
+
+.centered-axis-xy
+    position: absolute
+    left: 50%
+    top: 50%
+    -ms-transform: translate(-50%, -50%)
+    -webkit-transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%)
+
+.centered-axis-x
+    position: absolute
+    left: 50%
+    -ms-transform: translate(-50%, 0)
+    -webkit-transform: translate(-50%, 0)
+    transform: translate(-50%, 0)
+
+.centered-axis-y
+    position: absolute
+    top: 50%
+    -ms-transform: translate(0, -50%)
+    -webkit-transform: translate(0, -50%)
+    transform: translate(0, -50%)
+
+.text-shadow
+    text-shadow: 0 0 2px #000
+
+.text-shadow-gray
+    text-shadow: 0 0 2px rgba(93, 93, 93, 0.87)
+
+.input-search
+    @media (max-width: 768px)
+        min-width: unset !important
+
+.width-unset
+    min-width: unset
+    width: unset
+
+.light-mode
+    overflow: unset !important
+
+.transform-all,.transform-all *
+    transition: all 0.3s ease-in-out
+
+.text-limit
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    max-width: 90%
+
+.tooltip
+    width: 250px
+
+.border-transparent
+    border-color: transparent !important
+
+.tag-wrapper
+    word-break: break-word
+    //height: 37px
+    //line-height: 1.8
+    //align-items: baseline !important
+    //overflow: hidden
+
+.table-sticky-card
+    position: sticky
+    top: 0
+    left: 0
+
+.box-shadow-0
+    box-shadow: none !important
+
+.config-box
+    .hidden
+        display: none
+
+.Dropdown_selectioned__pE2Q4
+    background-color: #bcbcbc2e !important
+    color: black !important
+
+.hidden-svg
+    svg
+        display: none
+
+.border-all-0
+    *
+        border: 0 !important
+
+.shadow-all-0
+    *
+        box-shadow: none !important
+
+.bg-hover-unset
+    &:hover
+        background-color: unset !important
