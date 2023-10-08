@@ -1,0 +1,23 @@
+.counters
+  display: inline-flex
+
+.counter
+  position: relative
+  display: flex
+  overflow: hidden
+  align-items: center
+  height: 2.9rem
+  color: #333
+  > span
+    z-index: 1
+    display: flex
+    flex-direction: column
+    height: 100%
+    transition: transform 1s ease
+    transform: translateY(0)
+    line-height: 1
+
+    span
+      flex: 0 0 100%
+      height: 100%
+

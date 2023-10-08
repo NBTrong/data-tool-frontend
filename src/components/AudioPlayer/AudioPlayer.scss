@@ -1,0 +1,66 @@
+.audio-player {
+    margin: auto;
+    background-color: #EFEFEF;
+    border-radius: 10px;
+    padding: 5px 8px;
+    min-width: 130px;
+
+    .player-controls {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #playAudio {
+        -webkit-appearance: none;
+        outline: none;
+        cursor: pointer;
+        border: none;
+        width: 17px;
+        height: 17px;
+        background: url('https://img.icons8.com/?size=64&id=59862&format=png') no-repeat center;
+        background-size: contain;
+
+        &.pause {
+            background: url('https://img.icons8.com/?size=64&id=61012&format=png') no-repeat center;
+            background-size: contain;
+        }
+    }
+
+    p {
+        margin: 0 0 0 5px;
+        line-height: 1;
+        display: inline-flex;
+
+        small {
+            font-size: 10px;
+        }
+    }
+
+    #seekObjContainer {
+        position: relative;
+        width: 100%;
+        margin: 0 5px;
+        height: 4px;
+
+        #seekObj {
+            position:relative;
+            width: 100%;
+            height: 100%;
+            background-color: #e3e3e3;
+            border-radius: 10px;
+            cursor: pointer;
+
+            #percentage {
+                cursor: pointer;
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.74);
+                border-radius: 10px;
+            }
+        }
+    }
+}

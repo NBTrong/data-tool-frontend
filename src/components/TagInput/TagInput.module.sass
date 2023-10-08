@@ -1,0 +1,60 @@
+@import ../../styles/helpers
+$breakpoint: 700px
+
+.label
+    +base2
+    color: $n5
+    +dark
+        color: $n3
+
+.tooltip
+    position: relative
+    top: -1
+    svg
+        fill: $shades1
+
+.head
+    display: flex
+    align-items: center
+    margin-bottom: 12px
+    .label
+        margin-right: auto
+
+.counter
+    +caption1-m
+    color: $shades1
+    margin-left: auto
+
+    span
+        color: $n7
+        +dark
+            color: $n1
+
+.input
+    min-width: 370px
+    width: 100%
+    height: 48px
+    padding: 0 10px
+    border-radius: 12px
+    border: 2px solid transparent
+    +inter
+    +base1-s
+    color: $n7
+    transition: all .2s
+    +dark
+        border-color: $n6
+        background: $n6
+        color: $n1
+    +placeholder
+        color: $n4
+        +dark
+            color: $shades1
+    @media (max-width: $breakpoint)
+        min-width: 290px !important
+
+// &:focus
+    //     border-color: $shades1
+    //     background: $n
+    //     +dark
+    //         border-color: $n5
+    //         background: $n8

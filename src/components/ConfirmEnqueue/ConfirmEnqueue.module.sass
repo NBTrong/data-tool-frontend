@@ -1,0 +1,39 @@
+// styles.scss
+
+$badge-size: 30px
+$animation-duration: 2s
+
+.badge
+  position: fixed
+  top: 60%
+  left: 56%
+  transform: translate(-50%, -50%)
+  background-color: #ff0000
+  color: #fff
+  border-radius: 50%
+  width: $badge-size
+  height: $badge-size
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 14px
+  font-weight: bold
+  opacity: 0
+  pointer-events: none
+  z-index: 999
+  &.animate_badge
+    animation: badgeAnimation $animation-duration
+
+@keyframes badgeAnimation
+  0%
+    opacity: 1
+    transform: translate(-50%, -50%) scale(1)
+  10%
+    opacity: 1
+    transform: translate(-50%, -50%) scale(1)
+  70%
+    opacity: 1
+    transform: translate(-500%, -50%) scale(1.5)
+  100%
+    opacity: 0
+    transform: translate(-2500%, -650%) scale(0)

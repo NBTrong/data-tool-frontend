@@ -1,0 +1,36 @@
+@import ../../styles/helpers
+
+.btn
+  cursor: pointer
+
+.popover
+  --bs-border-color-translucent: #ffffff !important
+  border: unset !important
+  padding: 12px !important
+  border-radius: 16px !important
+  inset: 0px auto auto -40px !important
+  +inter
+  box-shadow: 0px 40px 64px -12px rgba(0, 0, 0, 0.08), 0px 0px 14px -4px rgba(0, 0, 0, 0.05), 0px 32px 48px -8px rgba(0, 0, 0, 0.1)
+  div
+    left: 40px !important
+  .popoverBody
+    padding: 0
+    min-width: 140px
+    .outer
+      margin-bottom: 6px
+      &:last-child
+        margin-bottom: 0
+    .item
+      color: white
+      cursor: pointer
+      padding: 8px
+      border-radius: 12px
+      &:empty
+        display: none !important
+      span
+        font-weight: 500
+      &:hover
+        background: #F4F4F4
+
+.font15
+  +base1-s
