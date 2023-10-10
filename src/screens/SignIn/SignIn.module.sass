@@ -1,0 +1,104 @@
+@import ../../styles/helpers
+
+.login
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 48px
+    background: $n1
+    +m
+        padding: 24px
+    +dark
+        background: $n7
+
+.wrapper
+    max-width: 296px
+    +m
+        max-width: 100%
+
+.title
+    margin-bottom: 8px
+
+.head
+    margin-bottom: 28px
+    padding-bottom: 20px
+    border-bottom: 2px solid $n3
+    +dark
+        border-color: $n6
+
+.subtitle
+    margin-bottom: 20px
+    +body2-s
+
+.btns
+    display: flex
+    margin: 0 -4px
+    .button
+        flex: 0 0 calc(50% - 8px)
+        width: calc(50% - 8px)
+        margin: 0 4px
+        padding: 0 16px
+        img
+            margin-right: 10px
+
+.body
+    .button
+        width: 100%
+        margin-top: 10px
+        margin-bottom: 4px
+
+.field
+    margin-bottom: 2px
+
+.redLine
+    +text-error
+    margin-top: 2px
+    margin-bottom: 2px
+    margin-left: 12px
+    color: red
+.hidden
+    visibility: hidden
+
+.note
+    margin-top: 32px
+    +body2-s
+    color: $shades1
+
+.info
+    margin-top: 32px
+    +caption1
+    color: $n4
+    a
+        font-weight: 700
+        color: $n7
+        transition: color .2s
+        +dark
+            color: $n1
+        &:hover
+            color: $p1
+
+
+// Reset Password Modal 
+.content   
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    .image
+        padding: 28px 0px 28px 0px
+    .title1
+        +title2
+        padding: 10px
+    .title2
+        font-size: 14px
+        font-weight: 300
+        padding: 4px
+        color: $n4
+
+.button 
+    margin-top: 36px
+    margin-bottom: 36px
+
+// Forgot Password Modal
+.rpModal
+    padding: 20px 0px 40px 0px
