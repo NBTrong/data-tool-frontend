@@ -8,3 +8,13 @@ export const login = (data) =>
     url: '/login',
     data,
   });
+
+  export const resetPassword = (data, token) =>
+  publicApi({
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    method: 'PUT',
+    url: '/updatePassword',
+    data,
+  });
