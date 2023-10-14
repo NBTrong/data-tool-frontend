@@ -9,7 +9,7 @@ export const login = (data) =>
     data,
   });
 
-  export const resetPassword = (data, token) =>
+export const resetPassword = (data, token) =>
   publicApi({
     headers: {
       Authorization: `Bearer ${token}`,
@@ -18,3 +18,13 @@ export const login = (data) =>
     url: '/updatePassword',
     data,
   });
+
+export const forgotPassword = (email) => {
+  publicApi({
+    method: 'POST',
+    url: '/forgotPassword',
+    data: {
+      email,
+    },
+  });
+};
