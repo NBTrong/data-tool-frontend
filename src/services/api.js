@@ -28,3 +28,43 @@ export const forgotPassword = (email) => {
     },
   });
 };
+
+export const refreshToken = (data) =>
+  publicApi({
+    method: 'POST',
+    url: '/refreshToken',
+    data,
+  });
+
+export const logout = () =>
+  authApi({
+    method: 'POST',
+    url: '/logout',
+  });
+
+  export const getMe = () =>
+  authApi({
+    method: 'GET',
+    url: '/users/me',
+  });
+// ------------------------------ Logger ------------------------------
+export const getListLogger = (params) =>
+  authApi({
+    method: 'GET',
+    url: '/loggers',
+    params,
+  });
+
+export const getLoggerSummary = (params) =>
+  authApi({
+    method: 'GET',
+    url: '/loggers/summary',
+    params,
+  });
+
+export const getAmountLoggerByDay = (params) =>
+  authApi({
+    method: 'GET',
+    url: '/loggers/amount-by-day',
+    params,
+  });
