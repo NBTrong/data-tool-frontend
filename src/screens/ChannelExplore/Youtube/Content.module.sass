@@ -1,0 +1,133 @@
+@import ../../../styles/helpers
+
+.head
+    margin-bottom: 44px
+    +t
+        margin-bottom: 32px
+    +m
+        flex-wrap: wrap
+        margin-bottom: 24px
+    .form
+        margin-right: auto
+        +t
+            width: 250px
+        +m
+            width: 100%
+            margin: 0 0 16px
+    &.hidden
+        +t
+            display: none
+
+.title
+    margin-right: 24px
+
+
+
+.filters
+    margin-left: 8px
+    +t
+        display: none
+
+.details
+    display: none
+
+.row
+    &.flex
+        display: flex
+        .table
+            flex-shrink: 0
+            width: 440px
+            +w
+                width: 350px
+            +d
+                width: 320px
+            +t
+                display: none
+        .details
+            display: block
+
+
+.btnGroup
+    margin-bottom: 24px
+    &:empty
+        display: none
+
+    .btnImport
+        color: $n4
+        svg
+            fill: $n4
+        &:hover
+            color: $n7
+            svg
+                fill: $n7
+    .btnAdd
+        margin-right: 12px
+
+
+.btnArchive
+    border: 2px solid $n3
+    border-radius: 12px
+    .icon
+        margin-bottom: 2px
+        margin-left: 8px
+
+.btnExport
+    margin-left: 12px
+    border: 2px solid $n3
+    border-radius: 12px
+    .icon
+        margin-bottom: 4px
+        margin-left: 8px
+
+
+.icon
+    font-size: 20px
+
+.border
+    border: 1px solid $n3
+    border-radius: 12px
+    &:hover
+        border: 1px solid #e5e5e5
+        border-radius: 12px
+
+.nav
+    display: flex
+
+    +m
+        width: 100%
+
+.link
+    padding: 8px 16px
+    border-radius: 8px
+    +base1-s
+    color: $n4
+    transition: all .2s
+    +m
+        flex: 1
+    &:hover,
+    &.active
+        color: $n7
+        +dark
+            color: $n1
+    &.active
+        background: $n3
+        +dark
+            background: $n6
+    &:not(:last-child)
+        margin-right: 8px
+        +m
+            margin-right: 0
+
+
+.outer
+    max-width: 100%
+
+$breakpoint: 1800px
+.overflow_scroll_but_hide_scrollbar
+    @media (max-width: $breakpoint)
+        overflow: auto!important
+        -ms-overflow-style: none
+        scrollbar-width: none
+        &::-webkit-scrollbar
+            display: none
+
