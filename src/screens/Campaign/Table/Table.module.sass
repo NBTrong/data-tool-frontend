@@ -1,0 +1,127 @@
+@import ../../../styles/helpers
+
+.wrapper
+  margin: 0 -12px
+  +t
+    margin: 0
+
+.table
+  display: table
+  width: 100%
+  +s
+    display: block
+
+.row
+  display: table-row
+
+  &.active
+    .col
+      &:not(:first-child):not(:nth-child(2))
+        display: none
+      &:nth-child(2)
+        &:after
+          right: 12px
+
+.col
+  position: relative
+  display: table-cell
+  padding: 20px 18px
+  text-align: left
+  vertical-align: middle
+  color: $n4
+  &:after
+    content: ""
+    position: absolute
+    left: 0
+    bottom: 0
+    right: 0
+    height: 1px
+    background: $n3
+    +dark
+      background: $n6
+
+  // &:first-child
+  //     padding-left: 12px
+  &:last-child
+    &:after
+      right: 12px
+  &:nth-child(2)
+    white-space: nowrap
+
+
+
+.pagination
+  display: flex
+  justify-content: center
+  margin-top: 20px
+  text-align: center
+  .button
+    .loader
+      transform: scale(.8)
+      margin: 0 18px 0 8px
+
+.paginationActive
+  font-weight: bold
+
+.item
+  align-items: center
+  color: #808e9b
+  cursor: pointer
+  display: flex
+  font-size: 14px
+  height: 45px
+  width: 45px
+  justify-content: center
+  a
+    color: unset
+    padding: 0 20px
+
+.disabled-page
+  color: #808e9b
+.active
+  border: solid 1px #808e9b
+  border-radius: 40px
+  color: #808e9b
+.break-me
+.next
+  font-size: 20px
+  height: 20px
+  right: 0
+.pagination
+  align-items: center
+  display: flex
+  flex-direction: row
+    height: 30px
+  justify-content: center
+  list-style-type: none
+  position: relative
+.pagination-page
+  font-weight: 700
+.previous
+  font-size: 20px
+  height: 20px
+  left: 0
+
+
+.link
+  padding: 8px 16px
+  border-radius: 8px
+  +base1-s
+  color: $n4
+  transition: all .2s
+  +m
+    flex-grow: 1
+  &:hover,
+  &.active
+    color: $n7
+    +dark
+      color: $n1
+  &.active
+    background: $n3
+    +dark
+      background: $n6
+  &:not(:last-child)
+    margin-right: 8px
+
+.btnLoadMore
+  background: #EFEFEF

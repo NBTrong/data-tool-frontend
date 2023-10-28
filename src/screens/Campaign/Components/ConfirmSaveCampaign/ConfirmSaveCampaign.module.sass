@@ -1,0 +1,59 @@
+@import ../../../../styles/helpers
+
+.profile
+    display: flex
+    align-items: center
+    margin-bottom: 32px
+    +t
+        margin-bottom: 24px
+    & > .button
+        +m
+            display: none
+
+.remove
+    display: none
+    position: absolute
+    top: 0
+    right: 0
+    width: 24px
+    height: 24px
+    border-radius: 50%
+    background: $n1
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25)
+    font-size: 0
+    +m
+        display: inline-block
+
+.item
+    position: relative
+    +t
+        // display: none
+        &.active
+            display: block
+    &:not(:last-child)
+        margin-bottom: 48px
+        padding-bottom: 48px
+        border-bottom: 1px solid $n3
+        +t
+            margin-bottom: 0
+            padding-bottom: 0
+            border: none
+        +dark
+            border-color: $n6
+
+.footer
+    display: flex
+    justify-content: flex-end
+
+.btnCancel
+    margin-right: 12px
+
+.tooltip
+    position: relative
+    top: -1px
+    svg
+        fill: $shades1
+        
+.dropdownBody 
+    height: 400px
+    overflow-y: scroll
