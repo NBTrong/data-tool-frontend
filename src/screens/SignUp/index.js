@@ -8,10 +8,9 @@ import Code from './Code';
 import Image from '../../components/Image';
 
 const items = [
-  'Unlimited product uploads',
-  'Pro tips',
-  'Free forever',
-  'Full author options',
+  'Search for potential KOLs and KOCs',
+  'Analyze data',
+  'Crawl data is useful for businesses',
 ];
 
 const SignUp = () => {
@@ -25,7 +24,7 @@ const SignUp = () => {
           <div className={styles.preview}>
             <img src="/images/content/login-pic.png" alt="Login" />
           </div>
-          <div className={cn('h4', styles.subtitle)}>Plan includes</div>
+          <div className={cn('h4', styles.subtitle)}>DATA TOOL</div>
           <ul className={styles.list}>
             {items.map((x, index) => (
               <li key={index}>{x}</li>
@@ -38,8 +37,8 @@ const SignUp = () => {
           <Link className={styles.logo} to="/">
             <Image
               className={styles.pic}
-              src="/images/logo-dark.png"
-              srcDark="/images/logo-light.png"
+              src="/images/logo.png"
+              srcDark="/images/logo.png"
               alt="Core"
             />
           </Link>

@@ -6,6 +6,7 @@ import RequireAuth from './components/RequireAuth';
 import SuspenseContainer from './components/SuspenseContainer';
 
 const SignIn = lazy(() => import('./screens/SignIn'));
+const SignUp = lazy(() => import('./screens/SignUp'));
 const ResetPassword = lazy(() => import('./screens/ResetPassword'));
 const ForgotPassword = lazy(() => import('./screens/ForgotPassword'));
 const Page = lazy(() => import('./components/Page'));
@@ -66,7 +67,6 @@ const Router = () => {
         }
       />
 
-
       <Route
         exact
         path="/channel-explore/tiktok"
@@ -99,6 +99,15 @@ const Router = () => {
         element={
           <SuspenseContainer>
             <SignIn />
+          </SuspenseContainer>
+        }
+      />
+      <Route
+        exact
+        path="/sign-up"
+        element={
+          <SuspenseContainer>
+            <SignUp />
           </SuspenseContainer>
         }
       />

@@ -9,6 +9,13 @@ export const login = (data) =>
     data,
   });
 
+export const signUp = (data) =>
+  publicApi({
+    method: 'POST',
+    url: '/register',
+    data,
+  });
+
 export const refreshToken = (data) =>
   publicApi({
     method: 'POST',

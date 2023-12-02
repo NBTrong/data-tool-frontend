@@ -77,6 +77,9 @@ const SignIn = () => {
             {/*  This site is protected by reCAPTCHA and the Google Privacy Policy.*/}
             {/*</div>*/}
             <div className={styles.info}>
+              <Link className={styles.link} to="/sign-up">
+                Sign up
+              </Link>
               <Link className={styles.link} to="/forgot-password">
                 Forgot your password
               </Link>
