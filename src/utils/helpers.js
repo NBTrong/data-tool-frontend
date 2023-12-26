@@ -1,8 +1,9 @@
 import moment from 'moment';
 import ReactDOMServer from 'react-dom/server';
 import React from 'react';
-import axios from 'axios';
+import authApi from '../services/config/authApi.config';
 import baseUrl from '../services/config/baseUrl';
+import axios from 'axios';
 import * as XLSX from 'xlsx';
 import ExcelJS from 'exceljs';
 import { saveAs } from 'file-saver';
@@ -460,8 +461,8 @@ export function getTiktokUsername(str) {
   let username = isValidUrl(str, 'tiktok.com')
     ? str.match(/@(.+?)(?:\?|$)/)[1]
     : str.includes('@')
-    ? str.replace('@', '')
-    : str;
+      ? str.replace('@', '')
+      : str;
 
   // Loại bỏ ký tự "/" cuối cùng (nếu có)
   if (username.endsWith('/')) {
@@ -480,11 +481,16 @@ export function exploringHtml() {
 
 export function uploadInputFile(
   { formData, query },
-  _then = () => {},
-  _catch = () => {},
+  _then = () => { },
+  _catch = () => { },
 ) {
+  const accessToken = localStorage.getItem('accessToken');
+  const headers = {
+    'Authorization': `Bearer ${accessToken}`,
+    'Content-Type': 'multipart/form-data', // Nếu cần thiết, điều chỉnh kiểu nội dung theo yêu cầu của API
+  };
   axios
-    .post(baseUrl + `/input-file?${query}`, formData)
+    .post(baseUrl + `/input-file?${query}`, formData, { headers })
     .then((r) => _then(r.data))
     .catch((e) => _catch(e));
 }
