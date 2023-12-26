@@ -69,7 +69,7 @@ const Entry = ({ onConfirm }) => {
               icon="lock"
             />
 
-            <AsyncButton loading={loading} value="Sign in" type="submit" />
+            <AsyncButton loading={loading} value="Sign Up" type="submit" />
             {isError ? (
               <p className={styles.redLine}>{message}</p>
             ) : (
