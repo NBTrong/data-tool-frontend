@@ -31,11 +31,11 @@ const Heading = ({ summaryField, handleSort, displayIcon }) => {
                   dangerouslySetInnerHTML={{ __html: item.text }}
                 ></div>
               </div>
-              <div className="cursor-pointer ms-1">
+              {/* <div className="cursor-pointer ms-1">
                 {displayIcon[index] === 'default' && <BiSortAlt2 />}
                 {displayIcon[index] === 'DESC' && <AiOutlineArrowDown />}
                 {displayIcon[index] === 'ASC' && <AiOutlineArrowUp />}
-              </div>
+              </div> */}
               {/*{item.spacing && <span className='opacity-0'>Volume</span>}*/}
             </div>
           </Col>
